@@ -1,0 +1,139 @@
+@import url("global.css");
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+pre[class*="language-"] {
+  border: 1px solid var(--bg2);
+}
+
+img {
+  width: 100%;
+  margin: 40px auto;
+}
+
+table {
+  width: 50%;
+  margin: 20px auto;
+  border: 2px solid var(--fg);
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid var(--fg);
+  border-collapse: collapse;
+}
+th,
+td,
+tr {
+  padding: 5px;
+}
+th {
+  text-align: center;
+}
+
+#post-header {
+  margin-bottom: 20px;
+}
+
+#post-content {
+  text-align: justify;
+}
+
+.post-date {
+  margin-right: 20px;
+}
+
+.tag a {
+  font-size: 0.8rem;
+  margin: 0 2px;
+  padding: 2px 5px;
+  color: var(--fg);
+  text-decoration: none;
+  background-color: var(--bg1);
+}
+.tag a:hover {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+.task-list-item {
+  list-style: none;
+}
+
+.quote {
+  background-color: var(--bg0);
+  border-left: 4px solid var(--bg2);
+}
+
+.quote-note {
+  background-color: var(--bg1);
+  border-left: 4px solid var(--bg3);
+}
+
+.quote-info {
+  background-color: var(--purple);
+  border-left: 4px solid var(--aqua);
+}
+
+.quote-warning {
+  background-color: var(--red);
+  border-left: 4px solid var(--yellow);
+}
+
+.quote-question {
+  background-color: var(--blue);
+  border-left: 4px solid var(--purple);
+}
+
+.quote-title-symbol {
+  margin-right: 5px;
+  font-size: 1.3rem;
+}
+
+.quote-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.quote-content {
+  padding-top: 8px;
+}
+
+.quote-ref {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quote,
+.quote-note,
+.quote-info,
+.quote-warning,
+.quote-question {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.fa-triangle-exclamation {
+  color: #ffff00;
+}

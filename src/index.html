@@ -1,0 +1,21 @@
+---
+layout: layouts/homepage.html
+title: Home
+siteDescription: "My one and only page"
+numLatestShow: 2
+---
+
+<h1>Latest</h1>
+<div class="latest-posts">
+  {% set latest = collections.posts | reverse %}
+  {% for post in latest.slice(0, numLatestShow) %}
+    {% set date = post.date | readableDate("yyyy LLL dd") %}
+    {% set postDescription = post.data.postDescription %}
+
+    {% LatestPostCard post.data.title, date,  postDescription, post.url %}
+  {% endfor %}
+</div>
+
+<br>
+
+<a class="view-more-link" href="/posts">MORE POSTS</a>

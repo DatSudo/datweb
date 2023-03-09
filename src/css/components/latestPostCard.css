@@ -1,0 +1,47 @@
+@import url("/css/global.css");
+
+.post-card__container {
+  position: relative;
+  background-color: var(--bg0);
+  margin: 2% 0 2% 0;
+  padding: 10px 10px 35px 10px;
+}
+.post-card__container:hover {
+  background-color: var(--bg1);
+}
+.post-card__container span:last-child {
+  position: absolute;
+  right: 10px;
+}
+
+.post-card__link a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--bg);
+  background-color: var(--fg-dim);
+  padding: 4px;
+}
+.post-card__link a:hover {
+  text-decoration: underline solid 2px var(--bg);
+  background-color: var(--fg);
+}
+
+.post-date {
+  font-size: 0.8rem;
+}
+
+.post-card__description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h3 a {
+  color: var(--fg);
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+h3 a:hover {
+  color: var(--fg);
+  text-decoration: underline solid 3px var(--fg);
+}
