@@ -89,6 +89,10 @@ a.header-anchor {
   display: none;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 h2:hover a.header-anchor,
 h3:hover a.header-anchor,
 h4:hover a.header-anchor {
