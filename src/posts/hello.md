@@ -9,7 +9,7 @@ I finally finished this first personal website of mine with the help of [11ty](h
 
 ---
 
-Enough of talking and let's try all of the stuff that we can put in a post like this.
+I'll stop talking now and let's try all of the stuff that we can put in a post like this!
 
 ### Embedding images, YouTube videos, Twitter posts
 
@@ -103,12 +103,14 @@ https://twitter.com/_IUofficial/status/1623607644492791808
 ### Code blocks
 
 ```python
-// Python
+# Python
 def greet(name) -> None:
     return f"Hello {name}!"
 
+
 if __name__ == "__main__":
-    print(greet("11ty") for _ in range(11))
+    for _ in range(11): 
+        print(greet("11ty"))
 ```
 
 ```c
@@ -119,7 +121,7 @@ int main(void) { for (int i = 0; i < 11; ++i) { printf("Hello 11ty!\n"); } retur
 ```
 
 ```scheme
-// Scheme
+; Scheme
 (define (square x)
     (* x x))
 ```
@@ -164,18 +166,19 @@ $$
 
 ### Admonitions
 
-For this one, I maximize the use of [short codes](https://www.11ty.dev/docs/shortcodes/), one of 11ty's features, to mimick Obsidian.MD's  [admonitions](https://notes.nicolevanderhoeven.com/Obsidian+Admonition).
-
-{% Note "For the following code blocks, I put some backslashes just to prevent the short code from rendering it's corresponding HTML output. They are not part of the actual syntax." %}
+For this one, I maximize the use of [shortcodes](https://www.11ty.dev/docs/shortcodes/), one of 11ty's features, to mimick Obsidian.MD's  [admonitions](https://notes.nicolevanderhoeven.com/Obsidian+Admonition).
 
 #### Quotes
 
 ```md
-\{\% Quote content_of_a_quote, who_said_the_quote, admonition_title \%\}
+{% raw %}{% Quote content_of_a_quote, who_said_the_quote, admonition_title %}
 
-\{\% Quote "This is a quote", "Some dude", "A Quote" \%\}
-\{\% Quote "Another quote", "", "Second Quote" \%\}
+{% Quote "This is a quote", "Some dude", "A Quote" %}
+{% Quote "Another quote", "", "Second Quote" %}
+{% endraw %}
 ```
+
+Renders the following:
 
 {% Quote "This is a quote", "Some dude", "A Quote" %}
 {% Quote "Another quote", "", "Second Quote" %}
@@ -185,12 +188,13 @@ For this one, I maximize the use of [short codes](https://www.11ty.dev/docs/shor
 For the following admonitions, they follow this general syntax:
 
 ```md
-\{\% AdmonitionType content, optional_title \%\}
+{% raw %}{% AdmonitionType content, optional_title %}
 
-\{\% Note content, optional_title \%\}
-\{\% Info content, optional_title \%\}
-\{\% Warning content, optional_title \%\}
-\{\% Question content, optional_title \%\}
+{% Note content, optional_title %}
+{% Info content, optional_title %}
+{% Warning content, optional_title %}
+{% Question content, optional_title %}
+{% endraw %}
 ```
 
 {% Note "This is a note" %}
