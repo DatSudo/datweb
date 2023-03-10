@@ -5,9 +5,7 @@ tags: ["first post"]
 categories: [11ty]
 ---
 
-I finally finished this first personal website of mine with the help of [11ty](https://11ty.dev) (eleventy). I tried to make this website minimal as possible with it's styling and components, but also usable, in a sense that I can conveniently use some markdown syntaxes that I am familiar with from using [Obsidian.MD](https://obsidian.md). This is also my first encounter with some web development tools aside from HTML and CSS such as Node.js, `npm`, Javascript, and [Nunjucks](https://mozilla.github.io/nunjucks/) for templating. So $90\\%$ of the development process is just me searching on the internet for solutions or reading documentations, and tweak them based on my needs. The other $10\\%$ is me implementing my knowledge of general concepts in programming.
-
-I'll stop talking now and let's try all of the stuff that we can put in a post like this!
+I finally finished this first personal website of mine with the help of [11ty](https://11ty.dev) (eleventy). I tried to make this website minimal as possible with its styling and components, but also usable, in a sense that I can conveniently use some markdown syntaxes that I am familiar with from using [Obsidian.MD](https://obsidian.md). This is also my first encounter with some web development tools aside from HTML and CSS such as Node.js, `npm`, Javascript, and [Nunjucks](https://mozilla.github.io/nunjucks/) for templating. Hence $90\\%$ of the development process is just me searching on the internet for solutions or reading documentations, and tweak them based on my needs. The other $10\\%$ is me implementing my knowledge of general concepts in programming.
 
 ---
 
@@ -15,7 +13,7 @@ I'll stop talking now and let's try all of the stuff that we can put in a post l
 
 ### Embedding images and YouTube videos
 
-The syntax for embedding images
+Default markdown syntax for embedding images:
 
 ```md
 ![alt](/image/path "title")
@@ -24,7 +22,7 @@ The syntax for embedding images
 
 ![An image of a cat](/assets/images/cat.webp "Cat")
 
-For YouTube videos, the link must be in a separate line with one blank space before and after. For embedding two or more videos in a row, there must be two blank lines between them.
+For YouTube videos, the link must be in a separate line with one blank line before and after of it. For embedding two or more videos in a row, there must be two blank lines between them.
 
 ```md
 ...some content
@@ -103,13 +101,15 @@ if __name__ == "__main__":
 // C
 #include <stdio.h>
 
-int main(void) { for (int i = 0; i < 11; ++i) { printf("Hello 11ty!\n"); } return 0; }
+int main(void) { int eleventy = 11; for (int i = 0; i < eleventy; ++i) { printf("Hello %dty!\n", eleventy); } return 0; }
 ```
 
 ```scheme
 ; Scheme
 (define (square x)
     (* x x))
+
+(display (square 5)) (newline)
 ```
 
 ### $\LaTeX \text{ Math}$
