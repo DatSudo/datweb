@@ -5,7 +5,11 @@ tags: ["first post"]
 categories: [11ty]
 ---
 
+<<<<<<< HEAD
 I finally finished this first personal website of mine with the help of [11ty](https://11ty.dev) (eleventy). I tried to make this website minimal as possible with its styling and components, but also usable, in a sense that I can conveniently use some markdown syntaxes that I am familiar with from using [Obsidian.MD](https://obsidian.md). This is also my first encounter with some web development tools aside from HTML and CSS such as Node.js, `npm`, Javascript, and [Nunjucks](https://mozilla.github.io/nunjucks/) for templating. Hence $90\\%$ of the development process is just me searching on the internet for solutions or reading documentations, and tweak them based on my needs. The other $10\\%$ is me implementing my knowledge of general concepts in programming.
+=======
+I finally finished this first personal website of mine with the help of [11ty](https://11ty.dev) (eleventy). I tried to make this website minimal as possible with its styling and components, but also usable, in a sense that I can conveniently use some markdown syntaxes that I am familiar with from using [Obsidian.MD](https://obsidian.md). This is also my first encounter with some web development tools aside from HTML and CSS such as Node.js, `npm`, Javascript, and [Nunjucks](https://mozilla.github.io/nunjucks/) for templating. Hence $90\\%$ of the development process is just me searching on the internet for solutions or reading documentations, and tweak them based on my needs. The other $10\\%$ is implementing my knowledge of general concepts in programming.
+>>>>>>> 8287d32a42e272e93dcf05b6fdcfb029fe779ffe
 
 ---
 
