@@ -5,7 +5,7 @@ siteDescription: "My one and only page"
 numLatestShow: 2
 ---
 
-<h1>Latest</h1>
+<h2>Latest</h2>
 <div class="latest-posts">
   {% set latest = collections.posts | reverse %}
   {% for post in latest.slice(0, numLatestShow) %}
