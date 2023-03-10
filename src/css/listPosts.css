@@ -18,12 +18,23 @@ li {
 .post-categ {
   margin: 5px;
   padding: 5px;
-  font-size: 1rem;
   line-height: 50px;
-  color: var(--fg);
   text-decoration: none;
-  background-color: var(--bg1);
 }
+
+.post-categ {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--bg);
+  background-color: var(--fg-dim);
+}
+
+.post-tag {
+  font-size: 0.8rem;
+  background-color: var(--bg1);
+  color: var(--fg);
+}
+
 .post-categ:hover,
 .post-tag:hover,
 .archives-link a:hover {
