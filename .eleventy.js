@@ -1,5 +1,6 @@
 // Eleventy settings //
 const customEngine = "njk"
+const EXCLUDE = ["all", "nav", "post", "posts"];
 const SETTINGS = {
 	dir: {
 		input: "src",           // default: "."
@@ -17,16 +18,15 @@ const SETTINGS = {
     dateTemplateEngine: customEngine,
     pathPrefix: "/",
 }
-const EXCLUDE = ["all", "nav", "post", "posts"];
 
 // Short code JS //
 const SHORTCODE_PATH = "./src/_includes/components/"
 const latestPostCard = require(SHORTCODE_PATH + "LatestPostCard");
-const Quote = require(SHORTCODE_PATH + "Quote");
-const AdmonitionNote = require(SHORTCODE_PATH + "AdmonitionNote");
-const AdmonitionInfo = require(SHORTCODE_PATH + "AdmonitionInfo");
-const AdmonitionWarning = require(SHORTCODE_PATH + "AdmonitionWarning");
-const AdmonitionQuestion = require(SHORTCODE_PATH + "AdmonitionQuestion");
+const quote = require(SHORTCODE_PATH + "Quote");
+const admonitionNote = require(SHORTCODE_PATH + "AdmonitionNote");
+const admonitionInfo = require(SHORTCODE_PATH + "AdmonitionInfo");
+const admonitionWarning = require(SHORTCODE_PATH + "AdmonitionWarning");
+const admonitionQuestion = require(SHORTCODE_PATH + "AdmonitionQuestion");
 
 // Plugins //
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -71,19 +71,6 @@ const embedTwitterSettings = {
 }
 
 // Functions //
-function filterByCategList(categories) {
-	// Exclude unnecessary posts from filtering by categ
-	return (categories || [])
-		.filter(categ => EXCLUDE
-		.indexOf(categ) === -1);
-}
-
-function getAllCategs(collection) {
-	let categSet = new Set();
-	for(let item of collection) { (item.data.categories || []).forEach(categ => categSet.add(categ)); }
-	return Array.from(categSet);
-}
-
 function getCategsList(collection) {
 	const categsSet = new Set();
 	collection.getAll().forEach((item) => {
@@ -107,7 +94,6 @@ function getTagsList(collection) {
 }
 
 function readableDate(dateObj, format, zone) {
-	// Change date format with luxon's DateTime
 	return DateTime.fromJSDate(dateObj, {zone: zone || "utc" })
 				   .toFormat(format || "yyyy LLLL dd");
 }
@@ -152,12 +138,6 @@ module.exports = function(eleventyConfig) {
 
 	//------------------ Filters ------------------//
 
-	// Filter all the categories from a collection
-    eleventyConfig.addFilter("getAllCategs", collection => {return getAllCategs(collection);});
-	
-	// Remove junks from categ list
-    eleventyConfig.addFilter("filterCategList", filterByCategList);
-
 	// Format dates
 	eleventyConfig.addFilter("readableDate", (dateObj) => {return readableDate(dateObj)});
 	eleventyConfig.addFilter("htmlDateString", (dateObj) => {return htmlDateString(dateObj)})
@@ -172,11 +152,11 @@ module.exports = function(eleventyConfig) {
  
     //------------------ Short codes ------------------//
     eleventyConfig.addShortcode("LatestPostCard", latestPostCard);
-	eleventyConfig.addShortcode("Quote", Quote);
-	eleventyConfig.addShortcode("Note", AdmonitionNote);
-	eleventyConfig.addShortcode("Info", AdmonitionInfo);
-	eleventyConfig.addShortcode("Warning", AdmonitionWarning);
-	eleventyConfig.addShortcode("Question", AdmonitionQuestion);
+	eleventyConfig.addShortcode("Quote", quote);
+	eleventyConfig.addShortcode("Note", admonitionNote);
+	eleventyConfig.addShortcode("Info", admonitionInfo);
+	eleventyConfig.addShortcode("Warning", admonitionWarning);
+	eleventyConfig.addShortcode("Question", admonitionQuestion);
 
 	//------------------ Markdown library settings ------------------//
 	eleventyConfig.amendLibrary("md", mdLib => {
