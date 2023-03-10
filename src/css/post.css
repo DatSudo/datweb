@@ -16,10 +16,23 @@ h4 {
   font-size: 1.5rem;
 }
 
-p {
+h1,
+h2,
+h3,
+h4 {
+  text-align: left;
+  margin-top: 30px;
   margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
   font-size: 1.2rem;
   line-height: 2rem;
+}
+
+li {
+  font-size: 1.2rem;
 }
 
 pre[class*="language-"] {
@@ -28,7 +41,12 @@ pre[class*="language-"] {
 
 img {
   width: 100%;
-  margin: 40px auto;
+}
+
+img,
+lite-youtube,
+.eleventy-plugin-embed-twitter {
+  margin: 20px auto;
 }
 
 table {
