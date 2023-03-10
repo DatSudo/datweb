@@ -33,7 +33,6 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const automaticNoopener = require('eleventy-plugin-automatic-noopener');
 const mathjaxPlugin = require("eleventy-plugin-mathjax");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
-const embedTwitter = require("eleventy-plugin-embed-twitter");
 const { DateTime } = require("luxon");
 
 // markdown-it plugins //
@@ -62,12 +61,6 @@ const embedYouTubeSettings = {
 	lite: true,
 	lazy: true,
 	modestBranding: true
-}
-const embedTwitterSettings = {
-	align: "center",
-	conversation: "none",
-	doNotTrack: true,
-	theme: "dark"
 }
 
 // Functions //
@@ -127,7 +120,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(automaticNoopener, automaticNoopenerSettings);
 	eleventyConfig.addPlugin(mathjaxPlugin, mathjaxSettings);
 	eleventyConfig.addPlugin(embedYouTube, embedYouTubeSettings);
-	eleventyConfig.addPlugin(embedTwitter, embedTwitterSettings);
 
 	// Passthrough copies
     eleventyConfig.addPassthroughCopy("src/assets/");
