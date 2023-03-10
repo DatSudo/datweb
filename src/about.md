@@ -3,4 +3,4 @@ layout: "layouts/base.html"
 title: "About"
 ---
 
-# {{ title }}
+## {{ title }}
