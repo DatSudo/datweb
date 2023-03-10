@@ -9,9 +9,9 @@
   <article>
     <section id="post-header">
 
-      <h1>{{ title }}</h1>
+      <h1 id="post-title">{{ title }}</h1>
 
-      <span class="post-date">{{ page.date | readableDate }}</span>
+      <span class="post-date">{{ page.date | readableDate }}</span> |
 
       {% for tag in collections.tagsList %}
     	  {% set tagUrl %}/posts/tag/{{ tag | slugify }}/{% endset %}
@@ -21,7 +21,7 @@
     </section>
 
 
-    <section id="post-content">
+    <section class="post-content">
 
       {{ content | safe }}
 
