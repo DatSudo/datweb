@@ -1,56 +1,68 @@
 ---
-title: Hello 11ty!
-postDescription: "This is just going to be a lab for testing some markdown stuff and custom short codes."
-tags: [misc]
-categories: [Random]
+title: Hello World
+postDescription: "First post and a lab to test all the available markdown stuff that I can do with 11ty together with my custom configurations."
+tags: ["first post"]
+categories: [11ty]
 ---
 
-I *somewhat* finally finished this first personal website of mine with the help of [11ty](https://11ty.dev).
+I finally finished this first personal website of mine with the help of [11ty](https://11ty.dev) (eleventy). I tried to make this website minimal as possible with it's styling and components, but also usable, in a sense that I can conveniently use some markdown syntaxes that I am familiar with from using [Obsidian.MD](https://obsidian.md). This is also my first encounter with some web development tools aside from HTML and CSS such as Node.js, `npm`, Javascript, and [Nunjucks](https://mozilla.github.io/nunjucks/) for templating. So $90\\%$ of the development process is just me searching on the internet for solutions or reading documentations, and tweak them based on my needs. The other $10\\%$ is me implementing my knowledge of general concepts in programming.
 
-![Image alt](/assets/images/cat.webp "Image title")
+---
 
-Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis. Can you do some `inline code like this`? Can you do some footer shit?[^1]
+Enough of talking and let's try all of the stuff that we can put in a post like this.
 
-[^1]: This is a footer.
+### Embedding images, YouTube videos, Twitter posts
 
-**Code blocks**
+The syntax for embedding images
 
-```python
-def main() -> None:
-    print("Hello 11ty!")
+```md
+![alt](/image/path "title")
+![An image of a cat](/assets/images/cat.webp "Cat")
 ```
 
-```c
-#include <stdio.h>
+![An image of a cat](/assets/images/cat.webp "Cat")
 
-int main(void) {
-    printf("Hello 11ty!\n");
-    return 0;
-}
+For YouTube videos, the link must be in a separate line with one blank space before and after. For embedding two or more videos in a row, there must be two blank lines between them.
+
+```md
+...some content
+
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+...some content
+
+https://twitter.com/_IUofficial/status/1623607644492791808
+
+...some content
 ```
 
-```scheme
-(define (square x)
-    (* x x))
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+Same with tweets
+
+```md
+...
+
+https://twitter.com/_IUofficial/status/1623607644492791808
+
+...
 ```
 
-**Inline links**
+https://twitter.com/_IUofficial/status/1623607644492791808
 
-Search at [Google](https://google.com).
+### Tables
 
-**Task lists**
+```md
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
 
-- [X] Task 1
-- [ ] Task 2
-
-**Lists**
-
-- List 1
-    - List 1.1
-        - List 1.1.1
-- List 2
-
-**Tables**
+| abc | def |
+| --- | --- |
+| bar |
+| bar | baz | boo |
+```
 
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
@@ -62,13 +74,83 @@ Search at [Google](https://google.com).
 | bar |
 | bar | baz | boo |
 
-**Math $(\mathbb{Z})$**
+### Lists
+
+```md
+- [x] Foo
+- [ ] Bar
+- [ ] Ham
+- [x] Cheese
+```
+
+- [x] Foo
+- [ ] Bar
+- [ ] Ham
+- [x] Cheese
+
+```md
+- Foo
+    - Bar
+        - Ham
+            - Cheese
+```
+
+- Foo
+    - Bar
+        - Ham
+            - Cheese
+
+### Code blocks
+
+```python
+// Python
+def greet(name) -> None:
+    return f"Hello {name}!"
+
+if __name__ == "__main__":
+    print(greet("11ty") for _ in range(11))
+```
+
+```c
+// C
+#include <stdio.h>
+
+int main(void) { for (int i = 0; i < 11; ++i) { printf("Hello 11ty!\n"); } return 0; }
+```
+
+```scheme
+// Scheme
+(define (square x)
+    (* x x))
+```
+
+### $\LaTeX \text{ Math}$
+
+```md
+$$
+\text{Fib}(n) =
+\begin{cases}
+    1 & n < 2 \\\\ \\\\
+    \text{Fib}(n-1) + \text{Fib}(n-2) & \text{otherwise}
+\end{cases}
+$$
 
 $$
-\text{Fib}(n) = \begin{cases}
-                    1 & n < 2 \\\\ \\\\
-                    \text{Fib}(n-1) + \text{Fib}(n-2) & \text{otherwise}
-                \end{cases}
+\begin{align}
+\frac{a}{b} + \frac{c}{d} &= \frac{ad + bc}{bd}\\\\ \\\\
+\frac{3}{2} + \frac{4}{7} &= \frac{3\cdot7 + 2\cdot4}{2\cdot7} \\\\ \\\\
+&= \frac{21 + 8}{14} \\\\ \\\\
+\frac{3}{2} + \frac{4}{7} &= \frac{29}{14}
+\end{align}
+$$
+```
+
+$$
+\text{Fib}(n) =
+\begin{cases}
+    1 & n < 2 \\\\ \\\\
+    \text{Fib}(n-1) + \text{Fib}(n-2) & \text{otherwise}
+\end{cases}
 $$
 
 $$
@@ -80,34 +162,52 @@ $$
 \end{align}
 $$
 
-**Quote**
+### Admonitions
+
+For this one, I maximize the use of [short codes](https://www.11ty.dev/docs/shortcodes/), one of 11ty's features, to mimick Obsidian.MD's  [admonitions](https://notes.nicolevanderhoeven.com/Obsidian+Admonition).
+
+{% Note "For the following code blocks, I put some backslashes just to prevent the short code from rendering it's corresponding HTML output. They are not part of the actual syntax." %}
+
+#### Quotes
+
+```md
+\{\% Quote content_of_a_quote, who_said_the_quote, admonition_title \%\}
+
+\{\% Quote "This is a quote", "Some dude", "A Quote" \%\}
+\{\% Quote "Another quote", "", "Second Quote" \%\}
+```
 
 {% Quote "This is a quote", "Some dude", "A Quote" %}
 {% Quote "Another quote", "", "Second Quote" %}
+
+#### Note, info, warning, question
+
+For the following admonitions, they follow this general syntax:
+
+```md
+\{\% AdmonitionType content, optional_title \%\}
+
+\{\% Note content, optional_title \%\}
+\{\% Info content, optional_title \%\}
+\{\% Warning content, optional_title \%\}
+\{\% Question content, optional_title \%\}
+```
+
 {% Note "This is a note" %}
 {% set secNote %}
 $$
-\\f(x)=\begin{cases}
-            2x+1 & x > 1 \\\\
-            x+3 & \text{otherwise}
-        \end{cases}
+\\f(x)=
+\begin{cases}
+    2x+1 & x > 1 \\\\
+    x+3 & \text{otherwise}
+\end{cases}
 $$
 {% endset %}
+
 {% Note secNote, "Second Note" %}
+
 {% Info "A new info" %}
+
 {% Warning "A new warning" %}
+
 {% Question "A question" %}
-
-# Header 1
-
-## Header 2
-
-### Header 3
-
-#### Header 4
-
-Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
-
-### Header 3
-
-Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
