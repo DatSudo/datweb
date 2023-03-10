@@ -4,6 +4,19 @@ title: "Posts"
 numLatestPostShow: 10
 ---
 
+<h2>More latest posts</h2>
+
+<ul class="posts-container">
+    {% set latestPosts = collections.posts | reverse %}
+    {% for post in latestPosts.slice(0, numLatestPostShow) %}
+        {% set postDate = post.date | htmlDateString %}
+        <li>
+            <span class="post-date">{{ postDate }}</span> - 
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
 <h2>Categories</h2>
 
 <ul class="categs-container categs">
@@ -19,18 +32,6 @@ numLatestPostShow: 10
     {% for tag in collections.tagsList %}
     	{% set tagUrl %}/posts/tag/{{ tag | slugify }}/{% endset %}
         <li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
-    {% endfor %}
-</ul>
-
-<h2>{{ title }}</h2>
-<ul class="posts-container">
-    {% set latestPosts = collections.posts | reverse %}
-    {% for post in latestPosts.slice(0, numLatestPostShow) %}
-        {% set postDate = post.date | htmlDateString %}
-        <li>
-            <span class="post-date">{{ postDate }}</span> - 
-            <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </li>
     {% endfor %}
 </ul>
 
