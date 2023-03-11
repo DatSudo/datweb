@@ -20,8 +20,7 @@ const SETTINGS = {
 }
 
 // Short code JS //
-const SHORTCODE_PATH = "./src/_includes/components/"
-const latestPostCard = require(SHORTCODE_PATH + "LatestPostCard");
+const SHORTCODE_PATH = "./src/_includes/components/";
 const quote = require(SHORTCODE_PATH + "Quote");
 const admonitionNote = require(SHORTCODE_PATH + "AdmonitionNote");
 const admonitionInfo = require(SHORTCODE_PATH + "AdmonitionInfo");
@@ -144,7 +143,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addCollection('tagsList', collection => {return getTagsList(collection);})
  
     //------------------ Short codes ------------------//
-    eleventyConfig.addShortcode("LatestPostCard", latestPostCard);
 	eleventyConfig.addShortcode("Quote", quote);
 	eleventyConfig.addShortcode("Note", admonitionNote);
 	eleventyConfig.addShortcode("Info", admonitionInfo);

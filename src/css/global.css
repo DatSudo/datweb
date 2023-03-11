@@ -167,6 +167,17 @@ footer {
   text-decoration: underline solid 2px var(--bg);
 }
 
+.post-card__container .tag a {
+  font-size: 0.8rem;
+  background-color: var(--bg3);
+  padding: 3px;
+  color: var(--fg);
+}
+.post-card__container .tag a:hover {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
 footer hr {
   margin-bottom: 50px;
   border-width: 3px;

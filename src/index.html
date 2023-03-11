@@ -12,7 +12,20 @@ numLatestShow: 2
     {% set date = post.date | readableDate("yyyy LLL dd") %}
     {% set postDescription = post.data.postDescription %}
 
-    {% LatestPostCard post.data.title, date,  postDescription, post.url %}
+    <!-- {% LatestPostCard post.data.title, date,  postDescription, post.url %} -->
+
+    <div class="post-card__container">
+        <h3 class="post-card__title"><a title="Full post link" href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <span class="post-date">{{ date }}</span> |
+            {% for tag in post.data.tags %}
+    	          {% set tagUrl %}/posts/tag/{{ tag | slugify }}/{% endset %}
+                <span class="tag">
+                <a href="{{ tagUrl }}" title="{{ tag }}">{{ tag }}</a>
+                </span>
+            {% endfor %}
+        <p class="post-card__description">{{ postDescription }}</p>
+        <span class="post-card__link"><a title="Full post link" href="{{ post.url }}">Read more</a></span>
+    </div>
   {% endfor %}
 </div>
 
