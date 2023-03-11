@@ -39,6 +39,7 @@ const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
 const markdownItTaskLists = require("markdown-it-task-lists");
+const markdownItAdmonition = require("markdown-it-admonition");
 
 // Settings //
 const automaticNoopenerSettings = {
@@ -164,6 +165,7 @@ module.exports = function(eleventyConfig) {
 		});
 		mdLib.use(markdownItFootnote);
 		mdLib.use(markdownItTaskLists);
+		mdLib.use(markdownItAdmonition);
 	});
     
     return SETTINGS;

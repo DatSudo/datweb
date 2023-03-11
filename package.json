@@ -26,6 +26,7 @@
     "eleventy-plugin-youtube-embed": "^1.8.1",
     "luxon": "^3.3.0",
     "markdown-it": "^13.0.1",
+    "markdown-it-admonition": "^1.0.4",
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-task-lists": "^2.1.1"
