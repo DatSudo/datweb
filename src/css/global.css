@@ -2,6 +2,8 @@
 
 /* Roboto Slab font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap");
+/* Atkinson Hyperlegible */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap");
 
 /* Global variables */
 :root {
@@ -25,6 +27,9 @@
 
   --link-color: var(--yellow);
   --link-color-hover: var(--blue);
+
+  --heading-font: "Atkinson Hyperlegible";
+  --body-font: "Roboto Slab";
   /* ******************* */
 }
 [theme="light"] {
@@ -58,11 +63,20 @@ body {
   margin: 0 auto;
   color: var(--fg);
   background-color: var(--bg);
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto Slab";
+}
+
+h1,
+h2,
+h3,
+h4,
+nav {
+  font-family: var(--heading-font);
+  font-weight: 700;
 }
 
 nav {
-  font-weight: 700;
+  font-size: 1.2rem;
   margin-bottom: 30px;
 }
 nav div {
@@ -90,7 +104,15 @@ a.header-anchor {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 h2:hover a.header-anchor,
@@ -112,10 +134,13 @@ ul {
   color: var(--yellow);
 }
 
+header h1 {
+  margin-bottom: -18px;
+}
+
 #site-name {
   color: var(--fg);
-  font-weight: 900;
-  font-size: 3rem;
+  font-size: 4rem;
   text-decoration: none;
 }
 #site-name:hover {
@@ -212,6 +237,11 @@ footer hr {
 
 .post-card__container .post-date {
   font-size: 0.8rem;
+}
+.view-more-link,
+.post-card__link,
+.post-card__container .tag {
+  font-family: var(--heading-font);
 }
 
 .post-card__description {

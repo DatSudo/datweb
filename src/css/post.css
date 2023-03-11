@@ -4,25 +4,12 @@ h1 {
   font-size: 2.5rem;
 }
 
-h2 {
-  font-size: 2.2rem;
-}
-
-h3 {
-  font-size: 1.8rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
 h1,
 h2,
 h3,
 h4 {
   text-align: left;
   margin-top: 30px;
-  margin-bottom: 20px;
 }
 
 p {
@@ -32,7 +19,7 @@ p {
 }
 
 blockquote {
-  margin: 20px auto 10px auto;
+  margin: 10px auto 10px auto;
   background-color: var(--bg0);
   color: var(--fg-dim);
   border-left: var(--fg-dim) solid;
@@ -105,6 +92,10 @@ header h1 {
   font-size: 0.8rem;
 }
 
+.tag a,
+.categ a {
+  font-family: var(--heading-font);
+}
 .tag a {
   font-size: 0.8rem;
   margin: 0 2px;
@@ -176,7 +167,8 @@ blockquote,
 
 .admonition-title,
 .quote-title {
-  font-size: 1.1rem;
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -188,8 +180,8 @@ blockquote,
 
 .admonition,
 .quote {
-  padding: 20px;
-  margin: 20px 0;
+  padding: 10px 10px 10px 20px;
+  margin: 10px 0;
 }
 
 p.admonition-title {
@@ -218,5 +210,10 @@ p.admonition-title:first-letter {
   }
   .MJX-TEX {
     font-size: 4vw;
+  }
+  h2 mjx-container .MJX-TEX,
+  h3 mjx-container .MJX-TEX,
+  h4 mjx-container .MJX-TEX {
+    font-size: inherit;
   }
 }

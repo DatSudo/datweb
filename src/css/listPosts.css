@@ -72,3 +72,8 @@ li {
   margin-right: 0;
   right: 10px;
 }
+.post-categ,
+.post-tag,
+.archives-link {
+  font-family: var(--heading-font);
+}
