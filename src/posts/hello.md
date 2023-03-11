@@ -152,52 +152,53 @@ $$
 
 ### Admonitions
 
-For this one, I maximize the use of [shortcodes](https://www.11ty.dev/docs/shortcodes/), one of 11ty's features, to mimick Obsidian.MD's  [admonitions](https://notes.nicolevanderhoeven.com/Obsidian+Admonition).
-
-#### Quotes
+Admonitions follow this general syntax:
 
 ```md
-{% raw %}{% Quote content_of_a_quote, who_said_the_quote, admonition_title %}
-
-{% Quote "This is a quote", "Some dude", "A Quote" %}
-{% Quote "Another quote", "", "Second Quote" %}
-{% endraw %}
+!!! admonition_type title
+Admonition content
+!!!
 ```
 
-Renders the following:
+!!! quote
+This is a quote
+!!!
 
-{% Quote "This is a quote", "Some dude", "A Quote" %}
-{% Quote "Another quote", "", "Second Quote" %}
+!!! note A note
+This is a note
+!!!
 
-#### Note, info, warning, question
-
-For the following admonitions, they follow this general syntax:
-
-```md
-{% raw %}{% AdmonitionType content, optional_title %}
-
-{% Note content, optional_title %}
-{% Info content, optional_title %}
-{% Warning content, optional_title %}
-{% Question content, optional_title %}
-{% endraw %}
-```
-
-{% Note "This is a note" %}
-{% set secNote %}
+!!! note Second Note
 $$
-\\f(x)=
+f(x)=
 \begin{cases}
     2x+1 & x > 1 \\\\
     x+3 & \text{otherwise}
 \end{cases}
 $$
-{% endset %}
+!!!
 
-{% Note secNote, "Second Note" %}
+!!! info
+A new info
 
-{% Info "A new info" %}
+Footnote test.[^1]
+!!!
 
-{% Warning "A new warning" %}
+[^1]: This is a footnote.
 
-{% Question "A question" %}
+!!! warning
+A new warning
+!!!
+
+!!! question
+A new question
+Second question
+!!!
+
+#### Quote with author
+
+```md
+{% raw %}{% Quote "Quote content", "Author" %}{% endraw %}
+```
+
+{% Quote "Quote content", "Author" %}
