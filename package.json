@@ -7,6 +7,7 @@
     "build": "npx eleventy",
     "serve": "npx eleventy --serve",
     "clean": "rm -rf _site",
+    "newpost": "nvim ./src/posts/$npm_config_post.md",
     "test": "jest"
   },
   "keywords": [
