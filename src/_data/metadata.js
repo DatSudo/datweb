@@ -6,6 +6,10 @@ module.exports = {
     "description": "Datsudo's personal website.",
     "author": {
         "name": "Datsudo",
-        "url": "https://datsudo.netlify.app/about/"
+        "url": "https://datsudo.netlify.app/about/",
+        "github": "datsudo",
+        "gitlab": "datsudo",
+        "linkedin": "dpvillanueva",
+        "discordid": "497382757035540491"
     }
 }
