@@ -134,7 +134,7 @@ footer {
   color: var(--bg);
   background-color: var(--fg-dim);
   padding: 5px;
-  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 .post-date {
