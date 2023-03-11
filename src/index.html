@@ -10,9 +10,7 @@ numLatestShow: 2
   {% set latest = collections.posts | reverse %}
   {% for post in latest.slice(0, numLatestShow) %}
     {% set date = post.date | readableDate("yyyy LLL dd") %}
-    {% set postDescription = post.data.postDescription %}
-
-    <!-- {% LatestPostCard post.data.title, date,  postDescription, post.url %} -->
+    {% set postDescription = post.data.description %}
 
     <div class="post-card__container">
         <h3 class="post-card__title"><a title="Full post link" href="{{ post.url }}">{{ post.data.title }}</a></h3>

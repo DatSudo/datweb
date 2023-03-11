@@ -1,6 +1,6 @@
 ---
 title: Hello World
-postDescription: "First post and a lab to test all the available markdown stuff that I can do with 11ty together with my custom configurations."
+description: "First post and a lab to test all the available markdown stuff that I can do with 11ty together with my custom configurations."
 tags: ["first post"]
 categories: [11ty]
 ---
