@@ -117,6 +117,22 @@ header h1 {
   background-color: var(--fg);
   color: var(--bg);
 }
+.categ-tag-label {
+  font-size: 0.8rem;
+  color: var(--fg-dim);
+}
+.categ a {
+  font-size: 0.8rem;
+  margin: 0 2px;
+  padding: 2px 5px;
+  color: var(--bg);
+  text-decoration: none;
+  background-color: var(--fg-dim);
+}
+.categ a:hover {
+  background-color: var(--fg);
+  color: var(--bg);
+}
 
 .task-list-item {
   list-style: none;
