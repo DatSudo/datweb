@@ -31,6 +31,17 @@ p {
   line-height: 2rem;
 }
 
+blockquote {
+  margin: 20px auto 10px auto;
+  background-color: var(--bg0);
+  color: var(--fg-dim);
+  border-left: var(--fg-dim) solid;
+  padding: 10px 20px 10px 20px;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
 .post-content hr {
   margin: 30px 0;
 }
@@ -111,29 +122,35 @@ header h1 {
   list-style: none;
 }
 
+blockquote,
+.admonition {
+  border-left-width: 3px;
+}
+
+.admonition.quote,
 .quote {
   background-color: var(--bg0);
-  border-left: 4px solid var(--bg2);
+  border-left: solid var(--bg2);
 }
 
-.quote-note {
+.admonition.note {
   background-color: var(--bg1);
-  border-left: 4px solid var(--bg3);
+  border-left: solid var(--bg3);
 }
 
-.quote-info {
+.admonition.info {
   background-color: var(--purple);
-  border-left: 4px solid var(--aqua);
+  border-left: solid var(--aqua);
 }
 
-.quote-warning {
+.admonition.warning {
   background-color: var(--red);
-  border-left: 4px solid var(--yellow);
+  border-left: solid var(--yellow);
 }
 
-.quote-question {
+.admonition.question {
   background-color: var(--blue);
-  border-left: 4px solid var(--purple);
+  border-left: solid var(--purple);
 }
 
 .quote-title-symbol {
@@ -141,13 +158,10 @@ header h1 {
   font-size: 1.3rem;
 }
 
+.admonition-title,
 .quote-title {
   font-size: 1.1rem;
   font-weight: 600;
-}
-
-.quote-content {
-  padding-top: 8px;
 }
 
 .quote-ref {
@@ -156,15 +170,37 @@ header h1 {
   justify-content: flex-end;
 }
 
-.quote,
-.quote-note,
-.quote-info,
-.quote-warning,
-.quote-question {
+.admonition,
+.quote {
   padding: 20px;
   margin: 20px 0;
 }
 
+p.admonition-title {
+  margin-bottom: 2px;
+}
+p.admonition-title:first-letter {
+  text-transform: uppercase;
+}
+
+.quote-content {
+  padding-top: 10px;
+  font-size: 1.2rem;
+}
+
+.admonition p:last-child {
+  margin-bottom: 0;
+}
+
 .fa-triangle-exclamation {
   color: #ffff00;
+}
+
+@media (max-width: 500px) {
+  .MathJax {
+    max-width: 50%;
+  }
+  .MJX-TEX {
+    font-size: 4vw;
+  }
 }
