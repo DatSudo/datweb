@@ -13,7 +13,7 @@
 
       <span class="post-date">{{ page.date | readableDate }}</span> |
 
-      {% for tag in collections.tagsList %}
+      {% for tag in tags %}
     	  {% set tagUrl %}/posts/tag/{{ tag | slugify }}/{% endset %}
           <span class="tag"><a title="{{ tag | slugify }} tag" href="{{ tagUrl }}">{{ tag }}</a></span>
       {% endfor %}
