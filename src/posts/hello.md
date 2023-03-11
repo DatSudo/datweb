@@ -192,7 +192,6 @@ A new warning
 
 !!! question
 A new question
-Second question
 !!!
 
 #### Quote with author
