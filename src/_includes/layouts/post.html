@@ -11,11 +11,16 @@
 
       <h1 id="post-title">{{ title }}</h1>
 
-      <span class="post-date">{{ page.date | readableDate }}</span> |
+      <span class="post-date">{{ page.date | readableDate }}</span> | <span class="categ-tag-label">Tags: </span>
 
       {% for tag in tags %}
     	  {% set tagUrl %}/posts/tag/{{ tag | slugify }}/{% endset %}
-          <span class="tag"><a title="{{ tag | slugify }} tag" href="{{ tagUrl }}">{{ tag }}</a></span>
+          <span class="tag"><a title="{{ tag }} tag" href="{{ tagUrl }}">{{ tag }}</a></span>
+      {% endfor %}
+          | <span class="categ-tag-label">Under: </span>
+     {% for categ in categories %}
+          {% set categUrl %}/posts/category/{{ categ | slugify }}/{% endset %}
+          <span class="categ"><a title="{{ categ }} Category" href="{{ categUrl }}">{{ categ }}</a></span>
       {% endfor %}
 
     </section>
