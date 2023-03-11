@@ -4,7 +4,7 @@ title: "Posts"
 numLatestPostShow: 10
 ---
 
-<h2>More latest posts</h2>
+<h2>Latest posts</h2>
 
 <ul class="posts-container">
     {% set latestPosts = collections.posts | reverse %}
